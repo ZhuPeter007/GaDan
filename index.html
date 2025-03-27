@@ -3,321 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-        @font-face {
-            font-family: 'sys';
-            src: url('./assest/font/ChillRoundGothic_Regular.ttf') format('woff2');
-        }
-        @font-face {
-            font-family: 'custom';
-            src: url('./assest/font/字制区喜脉喜欢体.ttf') format('woff2');
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'sys', sans-serif;
-        }
-        body{
-            background-color: #0B1D26;
-        }
-        .header{
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 120px;
-            color: white;
-            position: absolute;
-            top: 20px;
-            z-index: 11;
-            transition: 0.4s;
-        }
-        .header .h-left {
-            font-size: 24px;
-            letter-spacing: 3px;
-        }
-        .header .h-middle {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            font-size: 12px;
-            letter-spacing: 1px;
-        }
-        .header .h-middle .h-m-item {
-            cursor: pointer;
-        }
-        .header .h-middle .h-m-item:hover {
-            color: #e4882e;
-            transition: 0.2s;
-        }
-        .header .h-right {
-            font-size: 14px;
-            letter-spacing: 1px;
-        }
-
-        .all-container {
-            width: 100%;
-            height: auto;
-            position: relative;
-        }
-        .back-sky, .back-mon,.back-people{
-            width: 100%;
-            height: auto;
-            position: absolute;
-        }
-        .back-sky {
-            z-index: 7;
-            top: -350px;
-            transition: 0.5s;
-        }
-        .back-mon {
-            z-index: 8;
-            top: 180px;
-            transition: 0.6s;
-        }
-        .back-people {
-            z-index: 12;
-            top: 400px;
-            transition: 0.9s;
-        }
-        .back-people img {
-            width: 100%;
-            height: auto;
-        }
-        .back-people div {
-            width: 100%;
-            height: 330px;
-            position: absolute;
-            top: 590px;
-            background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(11, 29, 38, 1) 50%);
-        }
-        .all-container .back1{
-            width: 100%;
-            height: 80vh;
-            background: linear-gradient(-12.59deg, rgba(255, 255, 255, 0) 30%, rgba(11, 29, 38, 0.9) 100%);
-            position: absolute;
-            z-index: 10;
-            top: 0;
-        }
-
-        .text-container {
-            position: absolute;
-            width: 600px;
-            height: 200px;
-            top: 20%;
-            left: calc(50% - 300px);
-            z-index: 11;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-start;
-            transition: 0.5s;
-        }
-        .text1-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            color: #e4882e;
-            font-size: 11px;
-        }
-        .text-container .bar {
-            width: 60px;
-            height: 1.5px;
-            background-color: #e4882e;
-        }
-        .text-container .text1 {
-            letter-spacing: 3px;
-        }
-        .text-container .text2 {
-            font-size: 60px;
-            font-family: 'custom', sans-serif;
-            color: white;
-            letter-spacing: 2px;
-        }
-        .text-container .text3 {
-            letter-spacing: 3px;
-            font-size: 12px;
-            color: white;
-        }
-        .filler {
-            width: 100%;
-            height: 145vh;
-            background-color: #0B1D26;
-            z-index: 13;
-            transition: 0.9s
-        }
-
-
-
-
-        .scroll-bar {
-            position: fixed;
-            top: 50%;
-            right: 4%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-end;
-            transition: 0.2s;
-            z-index: 20;
-        }
-        .scroll-bar .item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-        .scroll-bar .item .text {
-            font-size: 12px;
-            color: white;
-        }
-        .scroll-bar .item .bar {
-            width: 4px;
-            height: 60px;
-            background-color: rgba(255, 255, 255, 0.5);
-        }
-        .scroll-bar .item .first {
-            border-radius: 2px 2px 0 0;
-         }
-        .scroll-bar .item .end {
-            border-radius: 0 0 2px 2px;
-        }
-
-
-        .article{
-            z-index: 9;
-            width: 100%;
-            color: white;
-            margin-bottom: 240px;
-        }
-        .article .container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 150px;
-        }
-        .article .container .left{
-            position: relative;
-            width: 500px;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-        }
-        .article .container .left .number{
-            top: -60px;
-            left: -80px;
-            color: rgba(255, 255, 255, 0.3);
-            font-size: 150px;
-            position: absolute;
-            z-index: 9;
-        }
-        .article .container .left .text1{
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 40px;
-            color: #e4882e;
-            z-index: 10;
-        }
-        .article .container .left .text1 .bar{
-            width: 80px;
-            height: 1.5px;
-            background-color: #e4882e;
-            z-index: 10;
-        }
-        .article .container .left .text1 .text{
-            font-size: 13px;
-            letter-spacing: 3px;
-        }
-        .article .container .left .text2{
-            font-size: 50px;
-            line-height: 65px;
-            font-weight: bold;
-            letter-spacing: 5px;
-            z-index: 10;
-        }
-        .article .container .left .text3{
-            font-size: 14px;
-            letter-spacing: 2px;
-            line-height: 25px;
-        }
-        .article .container .left .text4{
-            font-size: 15px;
-            letter-spacing: 1px;
-            color: #e4882e;
-        }
-        .article .container .right{
-            width: 400px;
-            height: auto;
-        }
-
-
-
-        .footer{
-            z-index: 9;
-            width: 100%;
-            color: rgba(255, 255, 255, 0.8);
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            margin-top: 300px;
-            margin-bottom: 100px;
-        }
-        .footer .part1{
-            display: flex;
-            flex-direction: column;
-            gap: 35px;
-            margin-right: 90px;
-        }
-        .footer .part1 .logo{
-            font-size: 30px;
-            letter-spacing: 3px;
-        }
-        .footer .part1 .text{
-            font-size: 22px;
-            line-height: 30px;
-            letter-spacing: 2px;
-            width: 320px;
-            margin-bottom: 50px;
-            font-family: 'custom', sans-serif;
-        }
-        .footer .part1 .publish{
-            font-size: 13px;
-            letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.5);
-        }
-        .footer .part2{
-            margin-top: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        .footer .part2 .title{
-            font-size: 17px;
-            line-height: 25px;
-            letter-spacing: 1px;
-            color: #e4882e;
-        }
-        .footer .part2 .text{
-            font-size: 14px;
-            display: flex;
-            flex-direction: column;
-            letter-spacing: 1px;
-            gap: 22px;
-            color: rgba(255, 255, 255, 0.8);
-            cursor: pointer;
-        }
-        .footer .part2 .text div{
-            transition: 0.2s;
-        }
-        .footer .part2 .text div:hover{
-            color: #d89551;
-        }
-    </style>
+    <link rel="stylesheet" href="./assets/css/index.css">
 </head>
 <body>
     <div class="header">
@@ -345,10 +31,10 @@
 
     <div class="all-container">
         <div class="back1"></div>
-        <img src="./assest/imgs/img/sky.png" alt="" class="back-sky">
-        <img src="./assest/imgs/img/mon.png" alt="" class="back-mon">
+        <img src="./assets/images/sky.png" alt="" class="back-sky">
+        <img src="./assets/images/mon.png" alt="" class="back-mon">
         <div class="back-people">
-            <img src="./assest/imgs/img/people.png" alt="">
+            <img src="./assets/images/people.png" alt="">
             <div></div>
         </div>
 
@@ -391,13 +77,13 @@
                 <div class="text4">阅读更多&nbsp;&nbsp;&nbsp;&nbsp;→</div>
             </div>
 
-            <img src="./assest/imgs/img/article1.png" class="right" alt="">
+            <img src="./assets/images/article1.png" class="right" alt="">
         </div>
     </div>
     <div class="article">
 
         <div class="container">
-            <img src="./assest/imgs/img/article2.png" class="right" alt="">
+            <img src="./assets/images/article2.png" class="right" alt="">
             <div class="left">
                 <div class="number">02</div>
                 <div class="text1">
@@ -425,7 +111,7 @@
                 <div class="text4">阅读更多&nbsp;&nbsp;&nbsp;&nbsp;→</div>
             </div>
 
-            <img src="./assest/imgs/img/article3.png" class="right" alt="">
+            <img src="./assets/images/article3.png" class="right" alt="">
         </div>
     </div>
 
@@ -458,101 +144,6 @@
 
     </div>
 
-<script>
-    const header = document.querySelector('.header');
-    const textContainer = document.querySelector('.text-container');
-    const backSky = document.querySelector('.back-sky');
-    const backMon = document.querySelector('.back-mon');
-    const backPeople = document.querySelector('.back-people');
-    const body = document.querySelector('body');
-
-    // 所有元素
-    const boms = [backSky, backMon, backPeople, textContainer, header, body];
-
-    //移动信号量
-    const status = {
-        textContainer: 0,
-        header: 0,
-        backSky: 0,
-        backMon: 0,
-        backPeople: 0
-    }
-
-    let allAnimationsFinished = false; // 标志位，用于判断是否所有动画已完成
-
-    window.addEventListener('wheel', function(e) {
-        if (!allAnimationsFinished) { // 如果动画未完成，则阻止默认行为
-            e.preventDefault();
-        }
-        if (window.scrollY === 0){
-            allAnimationsFinished = false;
-        }
-
-        // 计算增量
-        let delta = e.deltaY;
-
-        // .text-container Y轴移动计算
-        let textContainerTransform = parseInt(textContainer.style.transform.split('(')[1]) || 0;
-        let newTranslateYTextContainer = Math.max(-640, Math.min(0, textContainerTransform - delta * 3));
-        let newOpacityTextContainer = Math.max(0, Math.min(1, 1 - Math.abs(newTranslateYTextContainer) * 0.01));
-
-        if (newTranslateYTextContainer === -640){status.textContainer = 1;}
-
-        textContainer.style.transform = `translateY(${newTranslateYTextContainer}px)`;
-        textContainer.style.opacity = String(newOpacityTextContainer);
-
-        // .header X轴移动计算
-        let headerTransform = parseInt(header.style.transform.split('(')[1]) || 0;
-        let newTranslateYHeader = Math.max(-105, Math.min(0, headerTransform - delta * 0.5));
-        let newOpacityHeader = Math.max(0, Math.min(1, 1 - Math.abs(newTranslateYHeader) * 0.01));
-
-        if (newTranslateYHeader === -105){status.header = 1;}
-
-
-        header.style.transform = `translateX(${newTranslateYHeader}px)`;
-        header.style.opacity = String(newOpacityHeader);
-
-
-        // .back-sky Y轴0.5倍移动计算
-        let backSkyTransform = parseInt(backSky.style.transform.split('(')[1]) || 0;
-        let newTranslateYBackSky = Math.max(-300, Math.min(0, backSkyTransform - delta * 0.5));
-
-        // .back-mon Y轴0.2倍移动计算
-        let backMonTransform = parseInt(backMon.style.transform.split('(')[1]) || 0;
-        let newTranslateYBackMon = Math.max(-120, Math.min(0, backMonTransform - delta * 0.2));
-
-        // .back-people Y轴0.2倍移动计算
-        let backPeopleTransform = parseInt(backPeople.style.transform.split('(')[1]) || 0;
-        let newTranslateYBackPeople = Math.min(50, Math.max(0, backPeopleTransform + delta * 0.2));
-
-        if (newTranslateYBackPeople === 50 && newTranslateYBackMon === -120 && newTranslateYBackSky === -300){
-            status.backSky = 1;
-            status.backMon = 1;
-            status.backPeople = 1;
-        }else {
-            status.backSky = 0;
-            status.backMon = 0;
-            status.backPeople = 0;
-        }
-
-        // 背景图移动
-        if (status.textContainer === 1 && status.header === 1){
-            backSky.style.transform = `translateY(${newTranslateYBackSky}px)`;
-            backMon.style.transform = `translateY(${newTranslateYBackMon}px)`;
-            backPeople.style.transform = `translateY(${newTranslateYBackPeople}px)`;
-        }
-
-        // 更新状态部分...
-        if (status.backSky === 1 && status.backMon === 1 && status.backPeople === 1 && status.textContainer === 1 && status.header === 1){
-            allAnimationsFinished = true; // 所有动画完成
-        }
-    }, {passive: false});
-
-    // 添加监听器以检测动画结束并允许页面滚动
-    document.addEventListener('scroll', function() {
-        if (allAnimationsFinished) {}
-    }, {passive: true});
-
-</script>
+    <script src="./assets/js/index.js"></script>
 </body>
 </html>

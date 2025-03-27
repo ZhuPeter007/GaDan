@@ -1,0 +1,313 @@
+@font-face {
+    font-family: 'sys';
+    src: url('../fonts/ChillRoundGothic_Regular.ttf') format('woff2');
+}
+@font-face {
+    font-family: 'custom';
+    src: url('../fonts/字制区喜脉喜欢体.ttf') format('woff2');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'sys', sans-serif;
+}
+body{
+    background-color: #0B1D26;
+}
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
+    color: white;
+    position: absolute;
+    top: 20px;
+    z-index: 11;
+    transition: 0.4s;
+}
+.header .h-left {
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+.header .h-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+.header .h-middle .h-m-item {
+    cursor: pointer;
+}
+.header .h-middle .h-m-item:hover {
+    color: #e4882e;
+    transition: 0.2s;
+}
+.header .h-right {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.all-container {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.back-sky, .back-mon,.back-people{
+    width: 100%;
+    height: auto;
+    position: absolute;
+}
+.back-sky {
+    z-index: 7;
+    top: -350px;
+    transition: 0.5s;
+}
+.back-mon {
+    z-index: 8;
+    top: 180px;
+    transition: 0.6s;
+}
+.back-people {
+    z-index: 12;
+    top: 400px;
+    transition: 0.9s;
+}
+.back-people img {
+    width: 100%;
+    height: auto;
+}
+.back-people div {
+    width: 100%;
+    height: 330px;
+    position: absolute;
+    top: 590px;
+    background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(11, 29, 38, 1) 50%);
+}
+.all-container .back1{
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(-12.59deg, rgba(255, 255, 255, 0) 30%, rgba(11, 29, 38, 0.9) 100%);
+    position: absolute;
+    z-index: 10;
+    top: 0;
+}
+
+.text-container {
+    position: absolute;
+    width: 600px;
+    height: 200px;
+    top: 20%;
+    left: calc(50% - 300px);
+    z-index: 11;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: 0.5s;
+}
+.text1-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: #e4882e;
+    font-size: 11px;
+}
+.text-container .bar {
+    width: 60px;
+    height: 1.5px;
+    background-color: #e4882e;
+}
+.text-container .text1 {
+    letter-spacing: 3px;
+}
+.text-container .text2 {
+    font-size: 60px;
+    font-family: 'custom', sans-serif;
+    color: white;
+    letter-spacing: 2px;
+}
+.text-container .text3 {
+    letter-spacing: 3px;
+    font-size: 12px;
+    color: white;
+}
+.filler {
+    width: 100%;
+    height: 145vh;
+    background-color: #0B1D26;
+    z-index: 13;
+    transition: 0.9s
+}
+
+
+
+
+.scroll-bar {
+    position: fixed;
+    top: 50%;
+    right: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    transition: 0.2s;
+    z-index: 20;
+}
+.scroll-bar .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.scroll-bar .item .text {
+    font-size: 12px;
+    color: white;
+}
+.scroll-bar .item .bar {
+    width: 4px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.scroll-bar .item .first {
+    border-radius: 2px 2px 0 0;
+}
+.scroll-bar .item .end {
+    border-radius: 0 0 2px 2px;
+}
+
+
+.article{
+    z-index: 9;
+    width: 100%;
+    color: white;
+    margin-bottom: 240px;
+}
+.article .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+}
+.article .container .left{
+    position: relative;
+    width: 500px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.article .container .left .number{
+    top: -60px;
+    left: -80px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 150px;
+    position: absolute;
+    z-index: 9;
+}
+.article .container .left .text1{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    color: #e4882e;
+    z-index: 10;
+}
+.article .container .left .text1 .bar{
+    width: 80px;
+    height: 1.5px;
+    background-color: #e4882e;
+    z-index: 10;
+}
+.article .container .left .text1 .text{
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+.article .container .left .text2{
+    font-size: 50px;
+    line-height: 65px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    z-index: 10;
+}
+.article .container .left .text3{
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 25px;
+}
+.article .container .left .text4{
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #e4882e;
+}
+.article .container .right{
+    width: 400px;
+    height: auto;
+}
+
+
+
+.footer{
+    z-index: 9;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 300px;
+    margin-bottom: 100px;
+}
+.footer .part1{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    margin-right: 90px;
+}
+.footer .part1 .logo{
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+.footer .part1 .text{
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: 2px;
+    width: 320px;
+    margin-bottom: 50px;
+    font-family: 'custom', sans-serif;
+}
+.footer .part1 .publish{
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
+}
+.footer .part2{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.footer .part2 .title{
+    font-size: 17px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    color: #e4882e;
+}
+.footer .part2 .text{
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 1px;
+    gap: 22px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+.footer .part2 .text div{
+    transition: 0.2s;
+}
+.footer .part2 .text div:hover{
+    color: #d89551;
+}
